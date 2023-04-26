@@ -16,32 +16,32 @@
   // If age is less than 0, display that they must enter a valid age
 if ($userAge < 0) {
     $cost = "Please enter a valid age.";
-} 
+}
 
   // If the user does not enter their age, display that they must enter their age
 elseif (empty($userAge)) {
     $cost = "Please enter your age.";
-} 
+}
 
   // Otherwise, if the user does not enter the day of the week, display that they must do so
 elseif ($day == "Day of week") {
     $cost = "Please enter a day of the week.";
-} 
+}
 
   // Otherwise, if the user is under 5 OR over 95 years old, display that they get in for free
 elseif (($userAge < CHILD_FREE) || ($userAge > ELDERLY_FREE)) {
     $cost = "You can visit the museum for free!";
-} 
+}
 
   // Otherwise, if the user is between 12 and 21 years old, OR if it is Tuesday or Thursday, display that they get a discount
 elseif ((($userAge >= STUDENT_MINIMUM) && ($userAge <= STUDENT_MAXIMUM)) || (($day == "Thursday") || ($day == "Tuesday"))) {
     $cost = "You get a student discount.";
-} 
+}
 
   // Else, display that they do not get a discount
 else {
     $cost = "You are not eligible for a discount and must pay the full price.";
-} 
+}
 
   // Display the results to the user in the "results" div
   echo "$cost";
